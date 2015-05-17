@@ -1,0 +1,52 @@
+<script>
+  var SCORES = JSON.parse(<%= @scores.to_json.inspect %>);
+  var TITLE = JSON.parse(<%= @title.to_json.inspect %>);
+</script>
+
+<div class="header">
+  <p class="title"><a href="/">RECOG-A</a></p>
+  <p class="subtitle" style="text-align:center">Welcome <%=@user.first_name%></p>
+  <div class="logout">
+  <form class="pure-form pure-form-aligned" method="post" action="/logout">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="pure-button pure-button-primary">Log Out</button>
+  </form>
+  </div>
+  <img class="brain" src="/brain.jpg"/>
+</div>
+
+
+<div class="container">
+<p class="subtitle">My Quizzes</p>
+
+<ul>
+<% @quizzes.each do |quiz| %>
+  <li><p class="quiz-name"><%= quiz.title %></p></li>
+<div class="my-buttons">
+<form class="pure-form pure-form-aligned" method="get" action="/quiz/<%= quiz.id %>/take_quiz">
+<button type="submit" class="pure-button pure-button-primary">Take Recog</button>
+</form>
+</p>
+<p>
+<form class="pure-form pure-form-aligned" method="get" action="/quiz/<%=quiz.id%>">
+<button type="submit" class="pure-button pure-button-primary">View Recog</button>
+</form>
+</p>
+<p>
+<form class="pure-form pure-form-aligned" method="get" action="/quiz/<%= quiz.id %>/results">
+<button type="submit" class="pure-button pure-button-primary">Recog Results</button>
+</form>
+</p>
+<p>
+<% end %>
+
+<form class="pure-form pure-form-aligned" method="get" action="/quiz/new">
+<button type="submit" class="pure-button pure-button-primary">Create New Recog</button>
+</form>
+</div>
+</div>
+</ul>
+
+<div class="graph">
+<div id="container" style="width:100%; height:400px;"></div>
+</div>

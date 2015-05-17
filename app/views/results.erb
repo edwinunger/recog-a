@@ -1,0 +1,53 @@
+<div class="header">
+<p class="title"><a href="/">RECOG-A</a></p>
+<div class="logout">
+<form class="pure-form pure-form-aligned" method="post" action="/logout">
+<input type="hidden" name="_method" value="delete">
+<button type="submit" class="pure-button pure-button-primary">Log Out</button>
+</form>
+</div>
+<div class="my-page">
+<form action="/my_quizzes" method="get">
+<button class="pure-button pure-button-primary" type="submit">My Page</button>
+</form>
+</div>
+<p class="subtitle">Recog Results</p>
+<img class="brain" src="/brain.jpg"/>
+</div>
+
+<div class="container">
+<div class="score">You got <%= @right %> out of <%= @quiz.questions.length %> questions correct for a total score of<br>
+</div>
+  <h1 class="percent"><%= @score.round(2) %>%</h1>
+<br>
+<br>
+<br>
+Here are the <%= @wrong.length %> questions you got wrong:
+
+<ul><% @wrong.each do |question| %>
+  <li>
+    <%= question.question %>
+    <% question.choices.each do |choice| %>
+      <% if choice.correct == true %>
+      <ul>
+        <li><div class="correct"><%= choice.choice %></div>
+          <br>
+          <img class="image" src="<%= question.image_url %>"/></li>
+        <br>
+
+      </ul>
+      <% end %>
+  </li>
+    <% end %>
+
+<% end %></ul>
+
+Do you want to save these results?
+<form action="/quiz/<%=@quiz.id%>/results" method="post">
+<button class="pure-button pure-button-primary" type="submit">Save</button>
+</form>
+<br>
+<form action="/my_quizzes" method="get">
+<button class="pure-button pure-button-primary" type="submit">Discard</button>
+</form>
+</div>

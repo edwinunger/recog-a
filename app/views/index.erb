@@ -1,0 +1,37 @@
+<% if @id %>
+<%= erb :my_quizzes %>
+<% else %>
+<div class="header">
+
+<p class="title">RECOG-A</p>
+
+<div class="login">
+<form class="pure-form pure-form-aligned" method="get" action="/login/new">
+<button type="submit" class="pure-button pure-button-primary">Log In</button>
+</form>
+</div>
+
+<div class="signup">
+<form class="pure-form pure-form-aligned" method="get" action="/users/new">
+<button type="submit" class="pure-button pure-button-primary">Sign Up</button>
+</form>
+</div>
+
+<img class="brain" src="/brain.jpg"/>
+</div>
+<%end%>
+
+<div class="container">
+<p>
+  Welcome to Recog-A, the site that allows you to make Recogs, or quizzes, for your patient or loved one with Alzheimer's disease. If you already have an account, please login to view your Recogs and most recent scores.
+</p>
+<p>
+  If this is your first time to Recog-A, you can create an account for the person who will be taking the Recog. After you create the account, you'll be taken to your profile page and can begin adding new questions.
+</p>
+<p>
+  The idea behind Recog-A is that people with Alzheimer's often don't see a sudden drop in short-term or long-term memory. The changes happen over time, and can sometimes be imperceivable to loved ones who spend every day with the person.
+</p>
+<p>
+  With Recog-A, you can create a Recog for your patient or loved one. Upload images of family, friends, locations you've visited, pretty much anything. The answers are all multiple choice, and you can make the questions as easy or as difficult as you like. By having the person taking the Recog once a month or more, you can form a picture over time of any changes that might be occurring.
+</p>
+</div>

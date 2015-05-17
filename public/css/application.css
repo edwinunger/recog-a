@@ -1,0 +1,161 @@
+.question{
+  border: 5px solid black;
+  margin: 20px 200px 20px 200px;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d3d3d3;
+  font-family: "Lucida Grande";
+  font-size: 20px;
+  text-align: center;
+}
+
+.image{
+  border: 5px solid black;
+}
+
+.container{
+  border: 5px solid black;
+  margin: 20px 200px 20px 200px;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d3d3d3;
+  font-family: "Lucida Grande";
+  font-size: 20px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.instructions{
+  text-align: center;
+  font-family: "Lucida Grande";
+  font-size: 20px;
+}
+
+.title{
+  text-align: left;
+  font-family: "Lucida Grande";
+  font-size: 48px;
+  position: absolute;
+  left: 20px;
+  top: 74px;
+}
+
+.subtitle{
+  text-align: center;
+  font-family: "Lucida Grande";
+  font-size: 30px;
+}
+
+.brain{
+  left: 1070px;
+  top: 10px;
+  position: absolute;
+}
+
+.header{
+  display: inline-block;
+  border: 5px solid black;
+  width: 100%;
+  height: 163px;
+}
+
+.signup{
+  position: absolute;
+  left: 55%;
+  top: 135px;
+}
+
+.my-page{
+  position: absolute;
+  left: 55%;
+  top: 135px;
+}
+
+.login{
+  position: absolute;
+  left: 45%;
+  top: 135px;
+}
+
+.logout{
+  position: absolute;
+  left: 45%;
+  top: 135px;
+}
+
+a{
+  text-decoration: none;
+  color: #1c5a97;
+}
+
+a:visited{
+  color: #1c5a97;
+}
+
+a:link{
+  color: #1c5a97;
+}
+
+.quiz-name{
+  text-align: left;
+  font-family: "Lucida Grande";
+  font-size: 25px;
+}
+
+.graph{
+  border: 5px solid black;
+  margin: 20px 200px 20px 200px;
+  padding: 20px;
+  background-color: #d3d3d3;
+  font-family: "Lucida Grande";
+  font-size: 20px;
+}
+
+.file-upload{
+  left: 500px;
+  position: absolute;
+}
+
+.query{
+  text-align: left;
+  font-family: "Lucida Grande";
+  font-size: 20px;
+  position: absolute;
+
+}
+
+.title-box{
+  position: relative;
+  left: 125px;
+}
+
+.text{
+  text-align: left;
+}
+
+.score{
+  position: relative;
+  width: 700px;
+  text-align: left;
+  float: left;
+}
+
+.correct{
+  color: green;
+}
+
+.results{
+  position: absolute;
+  left: 45%;
+  margin-bottom: 50px;
+}
+
+.percent{
+  text-align: center;
+}

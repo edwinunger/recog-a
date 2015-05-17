@@ -1,0 +1,50 @@
+<div class="header">
+<p class="title"><a href="/">RECOG-A</a></p>
+<p class="subtitle"><%=@quiz.title%></a>
+<div class="logout">
+<form class="pure-form pure-form-aligned" method="post" action="/logout">
+<input type="hidden" name="_method" value="delete">
+<button type="submit" class="pure-button pure-button-primary">Log Out</button>
+</form>
+</div>
+<div class="my-page">
+<form action="/my_quizzes" method="get">
+<button class="pure-button pure-button-primary" type="submit">My Page</button>
+</form>
+</div>
+<img class="brain" src="/brain.jpg"/>
+</div>
+
+<div class="wrapper">
+<% @quiz.questions.each do |question| %>
+
+<form class="question" action="/quiz/<%= question.id %>/responses" method="post">
+
+  <legend>
+    <img class="image" src="<%= question.image_url %>"/>
+    <br>
+    <br>
+    <div class="text"><%= question.question %></div>
+    <br>
+    <br>
+  </legend>
+
+
+  <label>
+    <% question.choices.shuffle.each do |choice| %>
+      <div class="text"><input type="radio" name="choice" value="<%= choice.id %>" required>
+      <%= choice.choice %></div>
+      <br>
+  <% end %>
+  </label>
+
+  <button class="submit-button" type="submit">Submit</button>
+  </form>
+<% end %>
+</div>
+
+<div class="results">
+<form class="pure-form pure-form-aligned" method="get" action="/quiz/<%= @quiz.id %>/results">
+<button type="submit" class="pure-button pure-button-primary">See Results</button>
+</form>
+</div>

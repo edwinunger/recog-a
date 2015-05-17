@@ -1,0 +1,68 @@
+<div class="header">
+<p class="title"><a href="/">RECOG-A</a></p>
+<p class="subtitle" style="text-align:center"><%=@user.first_name%></p>
+<div class="logout">
+<form class="pure-form pure-form-aligned" method="post" action="/logout">
+<input type="hidden" name="_method" value="delete">
+<button type="submit" class="pure-button pure-button-primary">Log Out</button>
+</form>
+</div>
+<div class="my-page">
+<form action="/my_quizzes" method="get">
+<button class="pure-button pure-button-primary" type="submit">My Page</button>
+</form>
+</div>
+<img class="brain" src="/brain.jpg"/>
+</div>
+
+
+<div class="question">
+<p class="subtitle"><%= @quiz.title %></p>
+<br>
+<br>
+Create a Question:
+<br>
+<form method="post" action="/question" enctype="multipart/form-data">
+<input type="hidden" name="quiz_id" value="<%= params[:id] %>"/>
+<input type="question" name="question" placeholder="Question" />
+<br>
+<br>
+Import an image:
+<br>
+<br>
+<input class="file-upload" type="file" name="upload" accept="image/*">
+<br>
+<br>
+  Choices:
+  <br>
+  <input type="correct_choice" name="correct_choice" placeholder="Correct Option" />
+  <br>
+  <input type="incorrect_choice_1" name="incorrect_choice_1" placeholder="Incorrect Option 1" />
+  <br>
+  <input type="incorrect_choice_2" name="incorrect_choice_2" placeholder="Incorrect Option 2" />
+  <br>
+  <input type="incorrect_choice_3" name="incorrect_choice_3" placeholder="Incorrect Option 3" />
+  <br>
+  <button class="pure-button pure-button-primary" type="submit">Create Question</button>
+</form>
+</div>
+
+<div class="container">
+<ul>
+  <% @questions.each do |question| %>
+  <li>
+    <img src="<%= question.image_url %>"/>
+    <%= question.question %><br>
+    <ul>
+    <% question.choices.each do |choice| %>
+      <li>
+        <%= choice.choice %>: <%= choice.correct %>
+      </li>
+    <% end %>
+    <br>
+    <br>
+    </ul>
+  </li>
+  <% end %>
+</ul>
+</div>

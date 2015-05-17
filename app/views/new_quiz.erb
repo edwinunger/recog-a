@@ -1,0 +1,23 @@
+<div class="header">
+<p class="title"><a href="/">RECOG-A</a></p>
+<div class="logout">
+<form class="pure-form pure-form-aligned" method="post" action="/logout">
+<input type="hidden" name="_method" value="delete">
+<button type="submit" class="pure-button pure-button-primary">Log Out</button>
+</form>
+</div>
+<div class="my-page">
+<form action="/my_quizzes" method="get">
+<button class="pure-button pure-button-primary" type="submit">My Page</button>
+</form>
+</div>
+<img class="brain" src="/brain.jpg"/>
+</div>
+
+<div class="container">
+<form method="post" action="/quiz">
+Title of this Recog:
+<input type="title" name="title" placeholder="Title" />
+<button class="pure-button pure-button-primary" type="submit">Create Recog</button>
+</form>
+</div>
